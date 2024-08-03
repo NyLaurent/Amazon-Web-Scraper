@@ -35,14 +35,17 @@ def get_product_info(url):
     description_element = soup.select_one("#productDescription")
     description = description_element.text.strip() if description_element else None
 
-    return {
-        "title": title,
-        "price": price,
-        "rating": rating,
-        "image": image,
-        "description": description,
-        "url": url
-    }
+    # Return product details only if title and price are available
+    if title and price:
+        return {
+            "title": title,
+            "price": price,
+            "rating": rating,
+            "image": image,
+            "description": description,
+            "url": url
+        }
+    return None
 
 # Function to parse listing
 def parse_listing(listing_url):
