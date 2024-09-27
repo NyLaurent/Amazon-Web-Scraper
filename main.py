@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 import time
 import pandas as pd
 
-# Set up Chrome driver
+# Setting up Chrome driver
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
 options.add_argument('window-size=1920x1080')
